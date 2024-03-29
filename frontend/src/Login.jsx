@@ -5,6 +5,7 @@ import Validation from './LoginValidation'
 
 
 
+
 function Login() {
     const [values, setValues] = useState({
         email: '',
@@ -34,14 +35,12 @@ function Login() {
             <div className="mb-3">
                 <label htmlFor="email"><strong>Email</strong></label>
                 <input type="email" onChange={handleInput} name="email" placeholder="Enter Email" className="form-control rounded-0"/>
-                <span className="text-danger">{errors.email}</span>
+                {errors.email && <span className="text-danger">{errors.email}</span>}
             </div>
                {/**create input password  */}
                <div className="mb-3">
                 <label htmlFor="password"><strong>Password</strong></label>
                 <input type="password" onChange={handleInput} name="password" placeholder="Enter Password" className="form-control rounded-0"/>
-                <span className="text-danger">{errors.password}</span>
-
             </div>
             <button type='submit' className="btn btn-success w-100 rounded-0"><strong>Log in</strong></button>
             {/**creat account if you don't have an account  */}
